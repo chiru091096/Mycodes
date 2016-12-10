@@ -55,10 +55,12 @@ node *InsertList(node *head,int data){
 }
 
 void PrintList (node *head){
-    while(head!=NULL){
-        cout<<head->data<<" ";
-        head=head->next;
+    if(head==NULL){
+        return;
     }
+    
+    cout<<head->data<<" ";
+    PrintList(head->next);
 }
 
 node *ReverseList (node *head){
@@ -81,3 +83,4 @@ void ReverseList (node *head){
     node *temp=head->next;
     temp->next=head;
 }
+*/
