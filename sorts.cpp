@@ -11,7 +11,6 @@
 #include <cmath>
 using namespace std;
 
-int min (int [] ,int ,int );
 void print (int [] ,int );
 void selectionSort (int [] ,int  );
 void insertionSort (int [] ,int  );
