@@ -1,0 +1,52 @@
+/*
+Consider an array of numeric strings, , where each string is a positive number with anywhere from  to  digits.
+Sort the array's elements in non-decreasing (i.e., ascending) order of their real-world integer values and print
+each element of the sorted array on a new line.
+*/
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool compare(string s1,string s2){
+    long long int size_s1=s1.size();
+    long long int size_s2=s2.size();
+    int dig1,dig2;
+    
+    if(size_s1!=size_s2)
+        return size_s1<size_s2;
+        
+    else{
+        for(int i=0; i<size_s1;i++){
+            dig1=s1[i]-'0';
+            dig2=s2[i]-'0';
+            
+            if(dig1==dig2)
+                continue;
+            else
+                return dig1<dig2;
+        }
+        
+        return true;
+    }
+}
+
+int main(){
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    
+    for(int i = 0; i < n; i++){
+       cin >> arr[i];      
+    }
+    
+    sort(arr.begin(),arr.end(),compare);
+    
+    for(int i=0;i<n;i++)
+        cout<<arr[i]<<endl;
+   
+    return 0;
+}
