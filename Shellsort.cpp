@@ -1,3 +1,5 @@
+@chiranjeevi
+
 #include <iostream>
 using namespace std;
 
@@ -25,7 +27,7 @@ void shellSort(int arr[], int n){
             cout<<arr[i]<<" ";
         }
         cout<<endl;
-        h/=3;
+        h/=3;        //same as h-1/3
     }
 }
 
