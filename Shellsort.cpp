@@ -23,9 +23,7 @@ void shellSort(int arr[], int n){
                 }
             }
         }
-        for(int i=0;i<n;i++){
-            cout<<arr[i]<<" ";
-        }
+        /*for(int i=0;i<n;i++){  cout<<arr[i]<<" ";}*/
         cout<<endl;
         h/=3;        //same as h-1/3
     }
