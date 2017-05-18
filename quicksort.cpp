@@ -3,7 +3,7 @@ Date: 18-May-2017
 
 #include <iostream>
 #include <random>
-
+#include <algorithm>
 using namespace std;
 
 void exchange(int arr[], int i, int j){
@@ -17,11 +17,11 @@ int partition(int arr[], int lo, int hi){
     int pivot=lo;
     while(true){
         while(arr[++i]<arr[pivot]){     //most important step (for equal keys)
-            if(i>hi)
+            if(i>=hi)
                 break;
         }
         while(arr[--j]>arr[pivot]){     //cant decrement inside loop-creates problem for 1, 1, 1
-            if(j<lo)
+            if(j<=lo)
                 break;
         }
         
@@ -58,6 +58,7 @@ int main() {
 	for(int i=0; i<n; i++)
 	    arr[i]=dist(gen);
 	   
+	random_shuffle(arr,arr+n);
 	print(arr,n);
 	
 	quicksort(arr,0,n-1);
