@@ -58,13 +58,12 @@ struct node delMin(struct node minPQ[], int *np){
     return temp;
 }
 
-void createminPQ(int arr[], struct node minPQ[], int *np){
-    int temp;
+void createminPQ(struct node minPQ[], int *np){
+
     for(int i=0; i<*np; i++){
-        temp=arr[i];
-        minPQ[i].sum=2*temp*temp*temp;
-        minPQ[i].i=temp;
-        minPQ[i].j=temp;
+        minPQ[i].sum=2*i*i*i;
+        minPQ[i].i=i;
+        minPQ[i].j=i;
     }
     (*np)--;
 }
@@ -72,15 +71,12 @@ void createminPQ(int arr[], struct node minPQ[], int *np){
 int main() {
     int n;
     cin>>n;
-    int arr[n];
+ 
     struct node minPQ[n*n];
     struct node num;
     int N=n;
-    
-    for(int i=0; i<n; i++)
-        arr[i]=i;
-    
-    createminPQ(arr, minPQ, &n);
+       
+    createminPQ(minPQ, &n);
     
     while(!isEmpty(minPQ, n)){
         num=delMin(minPQ, &n);
