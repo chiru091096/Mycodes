@@ -139,7 +139,7 @@ void buildMinPQ(vector<node *> &uwgph, priority_queue<node *, vector<node *>, co
     }
 }
 
-void mstKruskal(vector<node *> &uwgph, queue<node *> &mst_edges, int parent[], int size[]){
+void kruskalMST(vector<node *> &uwgph, queue<node *> &mst_edges, int parent[], int size[]){
     int V=uwgph.size();
     int count = 0;
     priority_queue<node *, vector<node *>, compare> pq;
@@ -182,7 +182,7 @@ int main(){
     queue<node *> mst_edges;
     
     createUWGraph(uwgph, E); 
-    mstKruskal(uwgph, mst_edges, parent, size);
+    kruskalMST(uwgph, mst_edges, parent, size);
     printMST(mst_edges);
    
     return 0;
