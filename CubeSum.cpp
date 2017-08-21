@@ -38,6 +38,7 @@ bool isEmpty(struct node minPQ[], int n){
     return n<0;
 }
 
+
 void sink(struct node minPQ[], int k, int n){
     int j;
     while(2*k+1 <= n and k>=0){
