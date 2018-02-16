@@ -37,13 +37,6 @@ void initialize(int V, bool mark[], int parent[], int distance[], int cc[]){
     }    
 }
 
-void createUGraph(int E, vector<node *> &vertices){
-    int a, b;
-    for(int i=0; i<E; i++){
-        cin>>a>>b;
-        addUEdge(vertices,a,b);
-    }
-}
 void addUEdge(vector<node *> &vertices, int a, int b){
     
     if(vertices[a] == NULL){
@@ -66,6 +59,14 @@ void addUEdge(vector<node *> &vertices, int a, int b){
         while(ptr->next!=NULL)
             ptr = ptr->next;
         ptr->next=newNode(a);
+    }
+}
+
+void createUGraph(int E, vector<node *> &vertices){
+    int a, b;
+    for(int i=0; i<E; i++){
+        cin>>a>>b;
+        addUEdge(vertices,a,b);
     }
 }
 
